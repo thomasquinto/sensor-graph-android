@@ -66,6 +66,7 @@ fun SensorGraphView(
         Column {
             Text(viewModel.sensor.name,
                 fontSize = MaterialTheme.typography.headlineMedium.fontSize,
+                color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.padding(16.dp)
             )
 
