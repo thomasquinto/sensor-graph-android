@@ -18,8 +18,9 @@ import com.patrykandpatrick.vico.compose.chart.line.lineChart
 import com.patrykandpatrick.vico.core.chart.line.LineChart
 import com.patrykandpatrick.vico.core.entry.FloatEntry
 import com.patrykandpatrick.vico.core.entry.entryModelOf
-import com.quinto.sensorgraph.sensor.GyroscopeSensor
+import com.quinto.sensorgraph.model.AccelerometerSensorViewModel
 import com.quinto.sensorgraph.model.SensorViewModel
+import com.quinto.sensorgraph.sensor.AccelerometerSensor
 
 @Composable
 fun SensorGraphView(
@@ -94,12 +95,12 @@ fun SensorGraphView(
 @Composable
 fun SensorGraphViewPreview() {
     SensorGraphView(
-        SensorViewModel(
-            sensor = GyroscopeSensor(LocalContext.current, "Gyroscope")
+        AccelerometerSensorViewModel(
+            sensor = AccelerometerSensor(LocalContext.current)
         ),
-            mutableListOf(1, 2, 3, 4),
-            mutableListOf(2, 3, 4, 1),
-            mutableListOf(4, 2, 1, 3),
-            12
-        )
+        mutableListOf(1, 2, 3, 4),
+        mutableListOf(2, 3, 4, 1),
+        mutableListOf(4, 2, 1, 3),
+        12
+    )
 }

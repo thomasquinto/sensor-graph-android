@@ -4,13 +4,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.quinto.sensorgraph.sensor.GyroscopeSensor
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import com.quinto.sensorgraph.sensor.MeasurableSensor
 
-@HiltViewModel
-class SensorViewModel @Inject constructor(
-    val sensor: GyroscopeSensor
+abstract class SensorViewModel (
+    val sensor: MeasurableSensor
 ): ViewModel() {
 
     var x by mutableFloatStateOf(0.0f)
@@ -26,18 +23,3 @@ class SensorViewModel @Inject constructor(
     }
 }
 
-/*
-class MainViewModel @Inject constructor(
-    private val lightSensor: MeasurableSensor
-): ViewModel() {
-
-    var isDark by mutableStateOf(false)
-
-    init {
-        lightSensor.startListening { values ->
-            val lux = values[0]
-            isDark = lux < 60f
-        }
-    }
-}
- */

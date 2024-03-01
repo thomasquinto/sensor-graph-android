@@ -4,32 +4,30 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 
-class LightSensor(
-    context: Context,
-    name: String
-): AndroidSensor(
-    context = context,
-    sensorFeature = PackageManager.FEATURE_SENSOR_LIGHT,
-    sensorType = Sensor.TYPE_LIGHT,
-    name = name
-)
 
 class AccelerometerSensor(
-    context: Context,
-    name: String
+    context: Context
 ): AndroidSensor(
     context = context,
     sensorFeature = PackageManager.FEATURE_SENSOR_ACCELEROMETER,
     sensorType = Sensor.TYPE_ACCELEROMETER,
-    name = name
+    name = AndroidSensor.ACCELEROMETER_SENSOR_NAME
 )
 
 class GyroscopeSensor(
-    context: Context,
-    name: String
+    context: Context
 ): AndroidSensor(
     context = context,
     sensorFeature = PackageManager.FEATURE_SENSOR_GYROSCOPE,
     sensorType = Sensor.TYPE_GYROSCOPE,
-    name = name
+    name = AndroidSensor.GYROSCOPE_SENSOR_NAME
+)
+
+class LightSensor(
+    context: Context
+): AndroidSensor(
+    context = context,
+    sensorFeature = PackageManager.FEATURE_SENSOR_LIGHT,
+    sensorType = Sensor.TYPE_LIGHT,
+    name = AndroidSensor.LIGHT_SENSOR_NAME
 )

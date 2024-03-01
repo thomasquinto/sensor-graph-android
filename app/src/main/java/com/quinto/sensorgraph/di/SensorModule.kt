@@ -1,4 +1,4 @@
-package com.quinto.sensorgraph.model
+package com.quinto.sensorgraph.di
 
 import android.app.Application
 import com.quinto.sensorgraph.sensor.AccelerometerSensor
@@ -16,19 +16,20 @@ object SensorModule {
 
     @Provides
     @Singleton
-    fun provideLightSensor(app: Application): LightSensor {
-        return LightSensor(app, "Light")
-    }
-
-    @Provides
-    @Singleton
     fun provideAccelerometerSensor(app: Application): AccelerometerSensor {
-        return AccelerometerSensor(app, "Accelerometer")
+        return AccelerometerSensor(app)
     }
 
     @Provides
     @Singleton
     fun provideGyroscopeSensor(app: Application): GyroscopeSensor {
-        return GyroscopeSensor(app, "Gyroscope")
+        return GyroscopeSensor(app)
     }
+
+    @Provides
+    @Singleton
+    fun provideLightSensor(app: Application): LightSensor {
+        return LightSensor(app)
+    }
+
 }

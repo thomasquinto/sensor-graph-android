@@ -1,4 +1,4 @@
-package com.quinto.sensorgraph
+package com.quinto.sensorgraph.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

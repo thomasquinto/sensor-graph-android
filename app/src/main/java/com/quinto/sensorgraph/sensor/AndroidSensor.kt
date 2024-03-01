@@ -13,6 +13,12 @@ abstract class AndroidSensor(
     name: String
 ): MeasurableSensor(sensorType, name), SensorEventListener {
 
+    companion object {
+        const val ACCELEROMETER_SENSOR_NAME = "Accelerometer"
+        const val GYROSCOPE_SENSOR_NAME = "Gyroscope"
+        const val LIGHT_SENSOR_NAME = "Light"
+    }
+
     override val doesSensorExist: Boolean
         get() = context.packageManager.hasSystemFeature(sensorFeature)
 
