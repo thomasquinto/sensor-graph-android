@@ -31,3 +31,12 @@ class LightSensor(
     sensorType = Sensor.TYPE_LIGHT,
     name = AndroidSensor.LIGHT_SENSOR_NAME
 )
+
+class MagnetometerSensor(
+    context: Context
+): AndroidSensor(
+    context = context,
+    sensorFeature = PackageManager.FEATURE_SENSOR_COMPASS,
+    sensorType = Sensor.TYPE_MAGNETIC_FIELD,
+    name = AndroidSensor.MAGNETOMETER_SENSOR_NAME
+)

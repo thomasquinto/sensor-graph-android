@@ -4,6 +4,7 @@ import android.app.Application
 import com.quinto.sensorgraph.sensor.AccelerometerSensor
 import com.quinto.sensorgraph.sensor.GyroscopeSensor
 import com.quinto.sensorgraph.sensor.LightSensor
+import com.quinto.sensorgraph.sensor.MagnetometerSensor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +31,12 @@ object SensorModule {
     @Singleton
     fun provideLightSensor(app: Application): LightSensor {
         return LightSensor(app)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMagnetometerSensor(app: Application): MagnetometerSensor {
+        return MagnetometerSensor(app)
     }
 
 }

@@ -17,6 +17,7 @@ abstract class AndroidSensor(
         const val ACCELEROMETER_SENSOR_NAME = "Accelerometer"
         const val GYROSCOPE_SENSOR_NAME = "Gyroscope"
         const val LIGHT_SENSOR_NAME = "Light"
+        const val MAGNETOMETER_SENSOR_NAME = "Magnetometer"
     }
 
     override val doesSensorExist: Boolean
