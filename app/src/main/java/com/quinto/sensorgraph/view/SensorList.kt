@@ -25,7 +25,7 @@ fun SensorList(sensorNames: List<String>,
     Column {
         Text(
             text = "Sensors",
-            fontSize = MaterialTheme.typography.headlineLarge.fontSize,
+            fontSize = MaterialTheme.typography.headlineMedium.fontSize,
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .fillMaxWidth()
@@ -54,16 +54,16 @@ fun SensorListItem(
 ) {
     Card(
         modifier = Modifier
-            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .padding(horizontal = 4.dp, vertical = 4.dp)
             .fillMaxWidth(),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 10.dp
+            defaultElevation = 2.dp
         ),
-        shape = RoundedCornerShape(corner = CornerSize(16.dp)),
+        shape = RoundedCornerShape(corner = CornerSize(8.dp)),
     ) {
         Text(
             text = sensorName,
-            fontSize = MaterialTheme.typography.headlineMedium.fontSize,
+            fontSize = MaterialTheme.typography.titleMedium.fontSize,
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .fillMaxWidth()
