@@ -84,6 +84,10 @@ dependencies {
 
     // Vico graphs
     implementation("com.patrykandpatrick.vico:compose:1.14.0")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
 }
 
 kapt {

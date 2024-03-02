@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -24,12 +25,12 @@ import com.quinto.sensorgraph.sensor.AccelerometerSensor
 
 @Composable
 fun SensorGraphView(
-    viewModel: SensorViewModel,
-    xValues: MutableList<Number>,
-    yValues: MutableList<Number>,
-    zValues: MutableList<Number>,
-    maxSize: Int
+    viewModel: SensorViewModel
 ) {
+    val xValues = remember { mutableListOf<Number>() }
+    val yValues = remember { mutableListOf<Number>() }
+    val zValues = remember { mutableListOf<Number>() }
+    val maxSize = 12
 
     xValues.add(viewModel.x)
     if (xValues.size > maxSize) {
@@ -98,10 +99,6 @@ fun SensorGraphViewPreview() {
     SensorGraphView(
         AccelerometerSensorViewModel(
             sensor = AccelerometerSensor(LocalContext.current)
-        ),
-        mutableListOf(1, 2, 3, 4),
-        mutableListOf(2, 3, 4, 1),
-        mutableListOf(4, 2, 1, 3),
-        12
+        )
     )
 }
